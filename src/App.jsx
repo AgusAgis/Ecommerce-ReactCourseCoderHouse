@@ -17,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home greeting={"Todo en un solo lugar"} />} />
           <Route path="alimentos" element={<ItemListContainer />} /> 
-          <Route path="alimentos/:idCategory" element={<ItemListContainer />} /> 
+          <Route path="alimentos/:idCategory" element={<ItemListContainer />} />           
           <Route path= "alimentos/detail/:idProduct" element={<ItemDetailContainer/>}/>
           <Route path="snacks" element={<Snacks />} />  
           <Route path="accesorios" element={<Accesorios />} />  
