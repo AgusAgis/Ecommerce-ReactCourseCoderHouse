@@ -7,16 +7,18 @@ import ItemDetail from "./ItemDetail";
 function ItemDetailContainer(){
 
     const [product, setProduct] = useState([]);
+   
     const { idProduct } = useParams();
     
-    
+      
     useEffect(()=>{
         getFoodProducts
         .then((response)=>{
             if(idProduct){
-                const newProduct = response.filter((product) => product.id === idProduct);
+                const newProduct = response.find((product) => product.id === Number(idProduct));
+                
                 setProduct(newProduct);
-                console.log("newProduct",newProduct)
+          
             }
         })
         .catch(error=>console.log(error))
@@ -24,7 +26,7 @@ function ItemDetailContainer(){
     
    
     return(
-        <ItemDetail product={product} />
+        <ItemDetail key={product.id} product={product} />
     )
 }
 export default ItemDetailContainer

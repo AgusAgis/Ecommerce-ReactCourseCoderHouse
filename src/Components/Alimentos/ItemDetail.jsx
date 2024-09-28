@@ -1,8 +1,7 @@
 
-function ItemDetail(product){
-   
-    return(
-        
+function ItemDetail({product}){
+
+    return(        
         <div className="card">
             <h2>{product.nombre}</h2>
             <h3>${product.precio}</h3>
