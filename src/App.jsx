@@ -7,25 +7,30 @@ import Sucursales from "./Components/Sucursales/Sucursales"
 import Accesorios from "./Components/Accesorios/Accesorios"
 import Snacks from "./Components/Snacks/Snacks"
 import ItemDetailContainer from "./Components/Alimentos/ItemDetailContainer"
+import ThemeContext, {cartContext} from "./context"
 
 function App() {
-  
+  const [ cart, setCart ] = useState(cartContext);
+
   return (
     <>
     <BrowserRouter>
+    <ThemeContext.Provider value={cart}>
         <NavBar/>
-        <Routes>
-          <Route path="/" element={<Home greeting={"Todo en un solo lugar"} />} />
-          <Route path="alimentos" element={<ItemListContainer />} /> 
-          <Route path="alimentos/:idCategory" element={<ItemListContainer />} />           
-          <Route path= "alimentos/detail/:idProduct" element={<ItemDetailContainer/>}/>
-          <Route path="snacks" element={<Snacks />} />  
-          <Route path="accesorios" element={<Accesorios />} />  
-          <Route path="servicios" element={<Servicios />} />  
-          <Route path="sucursales" element={<Sucursales />} />  
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home greeting={"Todo en un solo lugar"} />} />
+            <Route path="alimentos" element={<ItemListContainer />} /> 
+            <Route path="alimentos/:idCategory" element={<ItemListContainer />} />           
+            <Route path= "alimentos/detail/:idProduct" element={<ItemDetailContainer/>}/>
+            <Route path="snacks" element={<Snacks />} />  
+            <Route path="accesorios" element={<Accesorios />} />  
+            <Route path="servicios" element={<Servicios />} />  
+            <Route path="sucursales" element={<Sucursales />} />  
+          </Routes>
+    </ThemeContext.Provider>
     </BrowserRouter>
     </>
+    
   )
 }
 
