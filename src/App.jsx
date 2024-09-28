@@ -8,7 +8,7 @@ import Accesorios from "./Components/Accesorios/Accesorios"
 import Snacks from "./Components/Snacks/Snacks"
 import ItemDetailContainer from "./Components/Alimentos/ItemDetailContainer"
 import ThemeContext, {cartContext} from "./context"
-
+import { useState } from "react"
 function App() {
   const [ cart, setCart ] = useState(cartContext);
 
