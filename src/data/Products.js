@@ -164,7 +164,7 @@ const productosAlimenticios = [
 const getFoodProducts = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve(productosAlimenticios);
-    }, 2000);
+    }, 8000);
 });
 
 export default getFoodProducts;
