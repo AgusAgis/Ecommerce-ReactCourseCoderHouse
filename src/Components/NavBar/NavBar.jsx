@@ -1,59 +1,85 @@
-import { useState } from "react";
 import CartWidget from "../CartWidget/CartWidget";
-import './NavBar.css'
-import { Link, Outlet } from "react-router-dom"
-function NavBar(){
-    const [isDropdownOpen, setDropdownOpen] = useState(false);
+import { Link, Outlet } from "react-router-dom";
 
-    const toggleDropdown = () => {
-        setDropdownOpen(!isDropdownOpen);
-    };
-    return(
-        <>
-        <nav className = 'navbar'>
-
-            <div> 
-                <Link  className="logo" to={"/"}>
-                    <img src="/images/600.jpg" alt="LogoDelLocal" />
+function NavBarBootstrap() {
+  return (
+    <>
+      <nav className="navbar bg-dark  navbar-expand-lg">
+        <div className="container-fluid">
+            <Link
+              className="navbar-brand"
+              to={"/"}
+              style={{ width: "120px", height: "120px", display: "flex", marginRight: '90px'  }}
+            >
+              <img src="/images/600.jpg" alt="LogoDelLocal" />
+            </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+          <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link
+                  className="nav-link active text-white"
+                  aria-current="page"
+                  to={"snacks"}
+                  
+                >
+                  Snacks
                 </Link>
-            </div>
-
-            <ul className="navbar-links">
-                <li className="navbar-item">
-                    <Link to="alimentos" className="dropdown-link" onClick={() => setDropdownOpen(false)}>Alimentos</Link>
-                    <button onClick={toggleDropdown} className="dropdown-button">
-                            ▼
-                    </button>
-                    {isDropdownOpen && (
-                        <ul className="dropdown-menu">
-                            <li >
-                                <Link to={"alimentos/perros"}onClick={() => setDropdownOpen(false)}>Perros</Link>
-                            </li>
-                            <li >
-                                <Link to={"alimentos/gatos"}onClick={() => setDropdownOpen(false)}>Gatos</Link>
-                            </li>
-                        </ul>
-                    )}
-                    
-                    
-                </li>
-                <li className="navbar-item">
-                    <Link to={"snacks"}>Snacks</Link>
-                </li>
-                <li className="navbar-item">
-                    <Link to={"accesorios"}>Accesorios</Link>
-                </li>
-                <li className="navbar-item">
-                    <Link to={"servicios"}>Servicios</Link>
-                </li>
-                <li className="navbar-item">
-                    <Link to={"sucursales"}>Sucursales</Link>
-                </li>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link text-white" to={"accesorios"}>
+                  Accesorios
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link text-white" to={"servicios"}>
+                  Servicios
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link text-white" to={"sucursales"}>
+                  Sucursales
+                </Link>
+              </li>
+              <li className="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Alimentos
+                </a>
+                <ul className="dropdown-menu">
+                  <li>
+                    <Link className="dropdown-item" to={"alimentos"}>
+                      Alimentos
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to={"alimentos/perros"}>
+                      Perros
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to={"alimentos/gatos"}>
+                      Gatos
+                    </Link>
+                  </li>
+                </ul>
+              </li>
             </ul>
-            <CartWidget/>
-        </nav>
-        <Outlet/>
-        </>
-    )
+          </div>
+        </div>
+        <CartWidget />
+      </nav>
+      <Outlet />
+    </>
+  );
 }
-export default NavBar;
+export default NavBarBootstrap;

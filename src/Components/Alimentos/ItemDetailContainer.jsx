@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import getFoodProducts from "../../data/Products";
 import { useParams } from "react-router-dom";
-import ItemDetail from "./ItemDetail";
+import Item from "./Item";
 
 
 function ItemDetailContainer(){
@@ -26,7 +26,7 @@ function ItemDetailContainer(){
     
    
     return(
-        <ItemDetail key={product.id} product={product} />
+        <Item key={product.id} product={product} />
     )
 }
 export default ItemDetailContainer

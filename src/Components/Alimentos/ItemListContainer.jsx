@@ -1,5 +1,4 @@
 import getFoodProducts from "../../data/Products";
-import "./ItemListContainer.css"
 import { useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
