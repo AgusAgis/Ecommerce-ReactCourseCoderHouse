@@ -1,10 +1,11 @@
-import './ItemList.css'
+import './Home.css'
 
 function ItemList({greeting}){
     return(
         <>
             <h1>{greeting}</h1>
-            <div className="item-list">
+            <div className="contenedor">
+                <img src="images/dog-bg.jpg" alt="img-home" />
             </div>
 
  
