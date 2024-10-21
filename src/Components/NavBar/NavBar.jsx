@@ -76,7 +76,9 @@ function NavBarBootstrap() {
             </ul>
           </div>
         </div>
-        <CartWidget />
+        <Link to={"carrito"}>
+          <CartWidget />                  
+        </Link>
       </nav>
       <Outlet />
     </>

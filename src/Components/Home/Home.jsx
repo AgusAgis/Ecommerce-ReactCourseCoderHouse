@@ -6,9 +6,7 @@ function ItemList({greeting}){
             <h1>{greeting}</h1>
             <div className="contenedor">
                 <img src="images/dog-bg.jpg" alt="img-home" />
-            </div>
-
- 
+            </div> 
         </>
     )
 }

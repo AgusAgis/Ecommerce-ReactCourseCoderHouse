@@ -7,6 +7,8 @@ import Sucursales from "./Components/Sucursales/Sucursales"
 import Accesorios from "./Components/Accesorios/Accesorios"
 import Snacks from "./Components/Snacks/Snacks"
 import ItemDetail from "./Components/Alimentos/ItemDetail"
+import CartContainer from "./Components/CartWidget/CartContainer"
+import DataProvider from "./context"
 import ThemeContext, {cartContext} from "./context"
 import { useState } from "react"
 import 'bootstrap/dist/css/bootstrap.min.css' 
@@ -17,22 +19,25 @@ function App() {
 
   return (
     <>
-    <BrowserRouter>
-    <ThemeContext.Provider value={cart}>
-        <NavBarBootstrap/>
-          <Routes>
-            <Route path="/" element={<Home greeting={"Todo en un solo lugar"} />} />
-            <Route path="alimentos" element={<ItemListContainer />} /> 
-            <Route path="alimentos/:idCategory" element={<ItemListContainer />} />    
-            <Route path="alimentos/:idCategory/detail/:idProduct" element={<ItemDetail/>} />          
-            <Route path= "alimentos/detail/:idProduct" element={<ItemDetail/>}/>
-            <Route path="snacks" element={<Snacks />} />  
-            <Route path="accesorios" element={<Accesorios />} />  
-            <Route path="servicios" element={<Servicios />} />  
-            <Route path="sucursales" element={<Sucursales />} />  
-          </Routes>
-    </ThemeContext.Provider>
-    </BrowserRouter>
+    <DataProvider>
+      <BrowserRouter>
+        <ThemeContext.Provider value={cart}>
+            <NavBarBootstrap/>
+              <Routes>
+                <Route path="/" element={<Home greeting={"Todo en un solo lugar"} />} />
+                <Route path="alimentos" element={<ItemListContainer />} /> 
+                <Route path="alimentos/:idCategory" element={<ItemListContainer />} />    
+                <Route path="alimentos/:idCategory/detail/:idProduct" element={<ItemDetail/>} />          
+                <Route path= "alimentos/detail/:idProduct" element={<ItemDetail/>}/>
+                <Route path="snacks" element={<Snacks />} />  
+                <Route path="accesorios" element={<Accesorios />} />  
+                <Route path="servicios" element={<Servicios />} />  
+                <Route path="sucursales" element={<Sucursales />} />  
+                <Route path="carrito" element={<CartContainer />} />
+              </Routes>
+        </ThemeContext.Provider>
+      </BrowserRouter>
+    </DataProvider>
     </>
     
   )

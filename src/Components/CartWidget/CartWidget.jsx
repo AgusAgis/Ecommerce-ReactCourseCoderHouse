@@ -6,6 +6,7 @@ function CartWidget(){
             <FaShoppingCart size="30px"/>
             <span className="badge">5</span> 
         </div>
+        
     )
 }
 
