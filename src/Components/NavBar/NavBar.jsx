@@ -52,7 +52,7 @@ function NavBarBootstrap() {
                 </Link>
               </li>
               <li className="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a className="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Alimentos
                 </a>
                 <ul className="dropdown-menu">

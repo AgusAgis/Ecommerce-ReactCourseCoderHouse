@@ -163,7 +163,7 @@ const productosAlimenticios = [
 
 const getFoodProducts = new Promise((resolve, reject) => {
     setTimeout(() => {
-        resolve(productosAlimenticios);
+        resolve({data:productosAlimenticios});
     }, 3000);
 });
 

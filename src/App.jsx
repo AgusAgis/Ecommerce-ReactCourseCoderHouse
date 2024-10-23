@@ -9,19 +9,16 @@ import Snacks from "./Components/Snacks/Snacks"
 import ItemDetail from "./Components/Alimentos/ItemDetail"
 import CartContainer from "./Components/CartWidget/CartContainer"
 import DataProvider from "./context"
-import ThemeContext, {cartContext} from "./context"
+
 import { useState } from "react"
 import 'bootstrap/dist/css/bootstrap.min.css' 
 
 
-function App() {
-  const [ cart, setCart ] = useState(cartContext);
-
+function App() {  
   return (
     <>
     <DataProvider>
-      <BrowserRouter>
-        <ThemeContext.Provider value={cart}>
+      <BrowserRouter>        
             <NavBarBootstrap/>
               <Routes>
                 <Route path="/" element={<Home greeting={"Todo en un solo lugar"} />} />
@@ -34,8 +31,7 @@ function App() {
                 <Route path="servicios" element={<Servicios />} />  
                 <Route path="sucursales" element={<Sucursales />} />  
                 <Route path="carrito" element={<CartContainer />} />
-              </Routes>
-        </ThemeContext.Provider>
+              </Routes>    
       </BrowserRouter>
     </DataProvider>
     </>

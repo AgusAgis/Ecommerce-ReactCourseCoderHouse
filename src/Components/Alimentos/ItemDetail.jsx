@@ -1,21 +1,18 @@
-import getFoodProducts from "../../data/Products";
-import { useEffect, useState} from "react";
-import { useParams } from "react-router-dom";
 
-function ItemDetail(){
-    const [product, setProduct] = useState([]);
-    const {idProduct} = useParams();
+function ItemDetail({product}){
+    // const [product, setProduct] = useState([]);
+    // const {idProduct} = useParams();
     
-    useEffect(()=>{
-        getFoodProducts
-        .then((response)=>{
-            if(idProduct){
-                const productFound = response.find((product) => product.id === Number(idProduct))
-                setProduct(productFound)
-            }
-        })
-        .catch(error =>console.log(error))
-    },[idProduct]);
+    // useEffect(()=>{
+    //     getFoodProducts
+    //     .then((response)=>{
+    //         if(idProduct){
+    //             const productFound = response.find((product) => product.id === Number(idProduct))
+    //             setProduct(productFound)
+    //         }
+    //     })
+    //     .catch(error =>console.log(error))
+    // },[idProduct]);
    
     return(  
         <div className="d-flex justify-content-center align-items-center">

@@ -1,29 +1,34 @@
-import getFoodProducts from "../../data/Products";
 import { useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import Loading from '../Loading/Loading';
+import { useContext } from "react";
+import { dataContext } from "../../context";
+
+
 function ItemListContainer(){
-
-     const [ products, setProducts ] = useState([]);
-     const [loading, setLoading] = useState(true);
-     const {idCategory} = useParams();
-
-     
+    const { data } = useContext(dataContext)
+    const [ products, setProducts ] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const {idCategory} = useParams();
+    
      useEffect(()=>{
-        getFoodProducts
-        .then((response)=>{
+        if(data.length > 0){
             if(idCategory){
-                const newProducts = response.filter((product) => product.categoria === idCategory)
-                setProducts(newProducts);
-                setLoading(false)
+                const newProducts = data.filter((product) => product.categoria === idCategory)
+                setProducts(newProducts)               
             }else{
-                setProducts(response)
-                setLoading(false)
+                setProducts(data)               
             }
-        })
-        .catch(error => console.log(error))
-     },[idCategory])
+            setLoading(false)
+        }
+     },[data, idCategory])
+
+     useEffect(()=>{
+        if(data.length===0){
+            setLoading(true)
+        }
+     },[data])
 
     return(
         <div>
