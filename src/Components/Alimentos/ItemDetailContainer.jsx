@@ -1,27 +1,23 @@
 import { useState, useEffect } from "react";
-import getFoodProducts from "../../data/Products";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
-
+import { useContext } from "react";
+import { dataContext } from "../../context";
 
 function ItemDetailContainer(){
-
+    const { data } = useContext(dataContext)
     const [product, setProduct] = useState([]);
-   
-    const { idProduct } = useParams();
-    
+    const { idProduct } = useParams();   
       
     useEffect(()=>{
-        getFoodProducts
-        .then((response)=>{
+        if(data.length>0){
             if(idProduct){
-                const newProduct = response.find((product) => product.id === Number(idProduct));
-                
-                setProduct(newProduct);
-          
+                const newProduct = data.find((product) => product.id === Number(idProduct));
+                setProduct(newProduct);          
+            }else{
+                setProduct(data)
             }
-        })
-        .catch(error=>console.log(error))
+        } 
     },[idProduct])
     
    

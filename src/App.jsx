@@ -6,7 +6,7 @@ import Servicios from "./Components/Servicios/Servicios"
 import Sucursales from "./Components/Sucursales/Sucursales"
 import Accesorios from "./Components/Accesorios/Accesorios"
 import Snacks from "./Components/Snacks/Snacks"
-import ItemDetail from "./Components/Alimentos/ItemDetail"
+import ItemDetailContainer from "./Components/Alimentos/ItemDetailContainer"
 import CartContainer from "./Components/CartWidget/CartContainer"
 import DataProvider from "./context"
 
@@ -24,8 +24,8 @@ function App() {
                 <Route path="/" element={<Home greeting={"Todo en un solo lugar"} />} />
                 <Route path="alimentos" element={<ItemListContainer />} /> 
                 <Route path="alimentos/:idCategory" element={<ItemListContainer />} />    
-                <Route path="alimentos/:idCategory/detail/:idProduct" element={<ItemDetail/>} />          
-                <Route path= "alimentos/detail/:idProduct" element={<ItemDetail/>}/>
+                <Route path="alimentos/:idCategory/detail/:idProduct" element={<ItemDetailContainer/>} />          
+                <Route path= "alimentos/detail/:idProduct" element={<ItemDetailContainer/>}/>
                 <Route path="snacks" element={<Snacks />} />  
                 <Route path="accesorios" element={<Accesorios />} />  
                 <Route path="servicios" element={<Servicios />} />  
