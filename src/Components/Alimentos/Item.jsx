@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom"
+import { useContext } from "react";
+import { dataContext } from "../../context";
 
 function Item({product}){
+     const {cart, setCart } = useContext(dataContext)
+
+     const buyProducts = (product) =>{
+        setCart([...cart,product ])
+     }
+
     return(
 
         <div className="card" style={{height:'100%', width: '14rem'}}>
@@ -9,6 +17,7 @@ function Item({product}){
                 <h5 className="card-title  ">{product.nombre}</h5>
                 <h3 className="card-text ">${product.precio}</h3>
                 <Link to={`detail/${product.id}`} className="btn btn-primary">Ver Detalle</Link>
+                <button onClick={()=>buyProducts(product)}>Comprar</button>
             </div>
         </div>
     )

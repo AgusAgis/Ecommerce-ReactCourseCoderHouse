@@ -7,10 +7,8 @@ import Sucursales from "./Components/Sucursales/Sucursales"
 import Accesorios from "./Components/Accesorios/Accesorios"
 import Snacks from "./Components/Snacks/Snacks"
 import ItemDetailContainer from "./Components/Alimentos/ItemDetailContainer"
-import CartContainer from "./Components/CartWidget/CartContainer"
+import CartContainer from "./Components/CartContent/CartContainer"
 import DataProvider from "./context"
-
-import { useState } from "react"
 import 'bootstrap/dist/css/bootstrap.min.css' 
 
 
