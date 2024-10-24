@@ -14,7 +14,17 @@ const DataProvider = ({children}) => {
         });
     },[])
 
-    return<dataContext.Provider value={{data, cart, setCart}}>{children}</dataContext.Provider>
+    const buyProducts = (product) =>{
+        const productRepeated = cart.find((item)=> item.id === product.id)
+
+        if(productRepeated){
+            setCart(cart.map((item)=> item.id === product.id ? {...product, quantity: productRepeated.quantity + 1 } : item))
+        }else{
+            setCart([...cart,product ])
+        }
+
+     }
+    return<dataContext.Provider value={{data, cart, setCart, buyProducts}}>{children}</dataContext.Provider>
 }
 
 export default DataProvider;

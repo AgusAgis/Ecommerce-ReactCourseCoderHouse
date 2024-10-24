@@ -3,11 +3,7 @@ import { useContext } from "react";
 import { dataContext } from "../../context";
 
 function Item({product}){
-     const {cart, setCart } = useContext(dataContext)
-
-     const buyProducts = (product) =>{
-        setCart([...cart,product ])
-     }
+     const {buyProducts } = useContext(dataContext) 
 
     return(
 

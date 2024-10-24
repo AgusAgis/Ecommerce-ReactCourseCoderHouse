@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { dataContext } from "../../context";
+import CartItemCounter from "./CartItemCounter";
 
 const CartElements = () => {
     const { cart } = useContext(dataContext)
@@ -12,7 +13,8 @@ const CartElements = () => {
                         <div className="flex-grow-1">
                             <h5 className="card-title">{product.nombre}</h5>
                         </div>
-                        <h3 className="card-text" style={{ marginLeft: 'auto' }}>${product.precio.toFixed(2)}</h3>
+                        <CartItemCounter product={product} />
+                        <h3 className="card-text" style={{ marginLeft: 'auto',width: '125px', textAlign: 'right'  }}>${product.precio.toFixed(2)}</h3>
                     </div>
                 </div>
             </div>
