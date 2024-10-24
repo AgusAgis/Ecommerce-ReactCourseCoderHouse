@@ -15,10 +15,10 @@ const CartItemCounter = ({product}) => {
 
     return(
         <div className="d-flex align-items-center">
-        <button className="btn btn-outline-primary me-2" onClick={decrease} style={{ width: '40px', height: '40px' }}>-</button>
-        <p className="m-0" style={{ width: '40px', textAlign: 'center' }}>{product.quantity}</p>
-        <button className="btn btn-outline-primary ms-2" onClick={() => buyProducts(product)} style={{ width: '40px', height: '40px' }}>+</button>
-    </div>
+            <button className="btn btn-outline-primary me-2" onClick={decrease} style={{ width: '40px', height: '40px' }}>-</button>
+            <p className="m-0" style={{ width: '40px', textAlign: 'center' }}>{product.quantity}</p>
+            <button className="btn btn-outline-primary ms-2" onClick={() => buyProducts(product)} style={{ width: '40px', height: '40px' }}>+</button>
+        </div>
     )
 }
 export default CartItemCounter;

@@ -136,46 +136,10 @@ const productosAlimenticios = [
     },
     {
         id: 16,
-        nombre: "Alimento Húmedo",
-        descripcion: "Delicioso alimento húmedo para perros, lleno de proteínas y nutrientes esenciales. Perfecto para perros con necesidades especiales o aquellos que prefieren una dieta húmeda.",
-        precio: 200.00,
-        img: "/images/perroSnack2.jpg",
-        categoria: "perros",
-        quantity: 1
-    },
-    {
-        id: 17,
         nombre: "Snacks de Queso",
         descripcion: "Bocadillos de queso para consentir a tu gato. Estos snacks son perfectos para utilizar como premio durante el entrenamiento o simplemente para mostrar cariño.",
         precio: 85.00,
         img: "/images/snack.jpg",
-        categoria: "gatos",
-        quantity: 1
-    },
-    {
-        id: 18,
-        nombre: "Alimento Balanceado",
-        descripcion: "Nutrición balanceada para gatos de todas las edades, con una mezcla de ingredientes naturales que favorecen una vida activa y saludable. Ideal para mantener un peso adecuado.",
-        precio: 300.00,
-        img: "/images/catSnack.jpg",
-        categoria: "gatos",
-        quantity: 1
-    },
-    {
-        id: 19,
-        nombre: "Croquetas de Cordero",
-        descripcion: "Croquetas de cordero para perros con paladar exigente. Esta fórmula gourmet es ideal para aquellos que buscan algo especial en su dieta diaria.",
-        precio: 360.00,
-        img: "/images/snack2.jpg",
-        categoria: "perros",
-        quantity: 1
-    },
-    {
-        id: 20,
-        nombre: "Snacks de Pavo",
-        descripcion: "Bocadillos de pavo, perfectos para el snack de tu gato. Ricos en sabor y con una textura que encanta, son ideales para un mimo especial en cualquier momento del día.",
-        precio: 90.00,
-        img: "/images/snack2.jpg",
         categoria: "gatos",
         quantity: 1
     }

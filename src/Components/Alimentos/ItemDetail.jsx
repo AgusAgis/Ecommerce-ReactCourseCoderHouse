@@ -12,9 +12,7 @@ function ItemDetail({product}){
                         <div className="card-body d-flex flex-column justify-content-center align-items-center">
                             <h5 className="card-title">{product.nombre}</h5>
                             <p className="card-text">{product.descripcion}</p>
-                            <h3 className="card-text ">${product.precio}</h3>
-                            <button className=" btn btn-primary">Comprar</button>
-
+                            <h3 className="card-text ">${(product.precio)}.00</h3>
                         </div>
                     </div>
                 </div>
