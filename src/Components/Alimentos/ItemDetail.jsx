@@ -1,5 +1,7 @@
-
+import { useNavigate } from 'react-router-dom';
 function ItemDetail({product}){
+
+    const navigate = useNavigate();
 
     return(  
         <div className="d-flex justify-content-center align-items-center">
@@ -13,6 +15,7 @@ function ItemDetail({product}){
                             <h5 className="card-title">{product.nombre}</h5>
                             <p className="card-text">{product.descripcion}</p>
                             <h3 className="card-text ">${(product.precio)}.00</h3>
+                            <button onClick={() => navigate(-1)} className="btn btn-dark">Atras</button>
                         </div>
                     </div>
                 </div>
