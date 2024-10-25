@@ -1,5 +1,7 @@
 import { createContext, useState, useEffect} from "react";
-import getFoodProducts from "./data/Products";
+import { db } from "./main"
+import { collection, getDocs } from 'firebase/firestore';
+
 
 export const dataContext = createContext();
 
@@ -8,10 +10,20 @@ const DataProvider = ({children}) => {
     const [cart, setCart] = useState([])
 
     useEffect(()=>{
-        getFoodProducts
-        .then((res)=> {
-            setData(res.data)
-        });
+       const fetchData = async ()=>{
+            try {
+                const productsCollection = collection(db,'products')
+                const snapshot = await getDocs(productsCollection)
+                const productsList = snapshot.docs.map(doc =>({
+                    id: doc.id, 
+                    ...doc.data()
+                }))
+                setData(productsList)
+            } catch (error) {
+                console.error("Error fetching products: ", error)
+            }
+       }
+       fetchData();
     },[])
 
     const buyProducts = (product) =>{

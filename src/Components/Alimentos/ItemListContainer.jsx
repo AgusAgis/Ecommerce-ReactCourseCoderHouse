@@ -12,20 +12,21 @@ function ItemListContainer(){
     const [loading, setLoading] = useState(true);
     const {idCategory} = useParams();
     
-     useEffect(()=>{
+    useEffect(()=>{
         if(data.length > 0){
-            if(idCategory){
+
+            if(idCategory === 'perros' ||idCategory === 'gatos' ){
                 const newProducts = data.filter((product) => product.categoria === idCategory)
                 setProducts(newProducts)               
             }else{
-                setProducts(data)               
+                setProducts(data)                            
             }
             setLoading(false)
         }
      },[data, idCategory])
 
      useEffect(()=>{
-        if(data.length===0){
+        if(data.length === 0){
             setLoading(true)
         }
      },[data])

@@ -1,7 +1,26 @@
 import CartWidget from "../CartWidget/CartWidget";
 import { Link, Outlet } from "react-router-dom";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../main";
+import { useEffect, useState } from "react";
 
 function NavBarBootstrap() {
+  const [categories, setCategories] = useState([])
+
+  useEffect(()=>{
+    const fetchCategories = async () => {
+      const categoriesCollection = collection(db, "categories");
+      const categoryDocs = await getDocs(categoriesCollection);
+      const categoriesList = categoryDocs.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setCategories(categoriesList);
+    };
+
+    fetchCategories();
+  },[])
+
   return (
     <>
       <nav className="navbar bg-dark  navbar-expand-lg">
@@ -56,7 +75,14 @@ function NavBarBootstrap() {
                   Alimentos
                 </a>
                 <ul className="dropdown-menu">
-                  <li>
+                {categories.map((category) => (
+                    <li key={category.id}>
+                      <Link className="dropdown-item" to={`alimentos/${category.id}`}>
+                        {category.description}
+                      </Link>
+                    </li>
+                  ))}
+                  {/* <li>
                     <Link className="dropdown-item" to={"alimentos"}>
                       Alimentos
                     </Link>
@@ -70,7 +96,7 @@ function NavBarBootstrap() {
                     <Link className="dropdown-item" to={"alimentos/gatos"}>
                       Gatos
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </li>
             </ul>

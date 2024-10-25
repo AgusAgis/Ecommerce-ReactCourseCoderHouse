@@ -1,4 +1,4 @@
-const productosAlimenticios = [
+const products = [
     {
         id: 1,
         nombre: "Croquetas Premium",
@@ -144,11 +144,4 @@ const productosAlimenticios = [
         quantity: 1
     }
 ];
-
-const getFoodProducts = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve({data: productosAlimenticios});
-    }, 3000);
-});
-
-export default getFoodProducts;
+export default products;
