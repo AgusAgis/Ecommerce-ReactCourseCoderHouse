@@ -1,5 +1,6 @@
 import CartElements from "./CartElements";
 import CartTotal from "./CartTotal";
+import Form from "../Form/Form"
 import { useContext } from "react";
 import { dataContext } from "../../context";
 import CartEmpty from "./CartEmpty";
@@ -10,7 +11,8 @@ const CartContainer = () =>{
     return cart.length > 0 ? (
         <>
         <CartElements/>
-        <CartTotal/>
+        <CartTotal/> 
+        {/* <Form/> */}
         </>
     ) : (
        <CartEmpty/>

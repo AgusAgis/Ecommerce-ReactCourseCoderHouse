@@ -1,3 +1,5 @@
+import React from "react";
+
 const Form = () => {
   return (
     <form>
@@ -58,3 +60,4 @@ const Form = () => {
     </form>
   );
 };
+export default Form;
