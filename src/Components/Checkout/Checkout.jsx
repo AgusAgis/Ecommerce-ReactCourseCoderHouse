@@ -1,5 +1,4 @@
 import Form from "../Form/Form";
-import CartTotal from "../CartContent/CartTotal";
 import CartElements from "../CartContent/CartElements";
 
 const Checkout = () => {
@@ -9,7 +8,7 @@ const Checkout = () => {
              
                 <div className="col-md-8">
                     <div className="d-flex flex-column">
-                        <CartElements />                       
+                        <CartElements editable={false}/>                       
                     </div>
                 </div>
                

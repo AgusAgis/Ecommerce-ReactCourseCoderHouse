@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { dataContext } from "../../context";
 import CartItemCounter from "./CartItemCounter";
 
-const CartElements = () => {
+const CartElements = ({editable=true}) => {
     const { cart, setCart } = useContext(dataContext)
 
     const deleteProduct = (id) => {
@@ -19,9 +19,15 @@ const CartElements = () => {
                         <div className="flex-grow-1">
                             <h5 className="card-title">{product.nombre}</h5>
                         </div>
-                        <CartItemCounter product={product} />
+                        {editable ? (
+                        <CartItemCounter product={product} /> // Mostrar controles si editable es true
+                    ) : (
+                        <span>{product.quantity}</span> // Mostrar solo la cantidad si no editable
+                    )}
+                        
                         <h3 className="card-text" style={{ marginLeft: 'auto',width: '125px', textAlign: 'right'  }}>${(product.precio * product.quantity).toFixed(2)}</h3>
-                        <button className="btn btn-danger ms-4"> <i className="fas fa-trash-alt" onClick={() => deleteProduct(product.id)}></i></button>
+                        {editable && ( <button className="btn btn-danger ms-4"> <i className="fas fa-trash-alt" onClick={() => deleteProduct(product.id)}></i></button>)}
+                           
                     </div>
                 </div>
             </div>
