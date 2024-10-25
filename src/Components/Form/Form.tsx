@@ -1,5 +1,6 @@
 import React from "react";
 import CartTotal from "../CartContent/CartTotal";
+import { Link } from "react-router-dom";
 
 const Form = () => {
   return (
@@ -56,9 +57,9 @@ const Form = () => {
             </label>
         </div>
         <CartTotal/>
-        <button type="submit" className="btn btn-primary m-3">
+        <Link to={"/success"}type="submit" className="btn btn-primary m-3">
             Crear pedido
-        </button>
+        </Link>
     </form>
   );
 };

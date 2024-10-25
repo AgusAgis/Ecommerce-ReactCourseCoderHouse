@@ -11,6 +11,7 @@ import CartContainer from "./Components/CartContent/CartContainer"
 import DataProvider from "./context"
 import 'bootstrap/dist/css/bootstrap.min.css' 
 import Checkout from "./Components/Checkout/Checkout"
+import SuccessBought from "./Components/SuccessBought/SuccessBought"
 
 
 function App() {  
@@ -30,6 +31,7 @@ function App() {
                 <Route path="sucursales" element={<Sucursales />} />  
                 <Route path="carrito" element={<CartContainer />} />
                 <Route path="checkout" element={<Checkout />} />
+                <Route path="success" element={<SuccessBought />} />
               </Routes>    
       </BrowserRouter>
     </DataProvider>
