@@ -10,6 +10,7 @@ import ItemDetailContainer from "./Components/Alimentos/ItemDetailContainer"
 import CartContainer from "./Components/CartContent/CartContainer"
 import DataProvider from "./context"
 import 'bootstrap/dist/css/bootstrap.min.css' 
+import Checkout from "./Components/Checkout/Checkout"
 
 
 function App() {  
@@ -28,6 +29,7 @@ function App() {
                 <Route path="servicios" element={<Servicios />} />  
                 <Route path="sucursales" element={<Sucursales />} />  
                 <Route path="carrito" element={<CartContainer />} />
+                <Route path="checkout" element={<Checkout />} />
               </Routes>    
       </BrowserRouter>
     </DataProvider>

@@ -1,8 +1,9 @@
 import React from "react";
+import CartTotal from "../CartContent/CartTotal";
 
 const Form = () => {
   return (
-    <form>
+    <form className="mt-3">
         <div className="mb-3">
             <label htmlFor="exampleInputName" className="form-label">
             Nombre
@@ -54,7 +55,8 @@ const Form = () => {
             Acepto términos de uso
             </label>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <CartTotal/>
+        <button type="submit" className="btn btn-primary m-3">
             Crear pedido
         </button>
     </form>
