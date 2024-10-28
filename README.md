@@ -15,7 +15,7 @@ Este es un proyecto de ecommerce desarrollado en React como parte del curso de C
 ## Tecnologías Utilizadas
 - **React**: Para la construcción de la interfaz de usuario.
 - **Bootstrap**: Para el diseño responsivo.
-- **Firebase**: Para la gestión de la base de datos y autenticación.
+- **Firebase**: Para la gestión de la base de datos.
 - **React Router**: Para la navegación entre diferentes vistas.
 - **React Confetti**: Para animaciones festivas.
 - **React Icons**: Para incluir iconos en la interfaz.
